@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: youverify
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: youverify
+  template:
+    metadata:
+      labels:
+        app: youverify
+    spec:
+      containers:
+        - name: app
+          image: emmygozi/youverify:latest
+          ports:
+            - containerPort: 3000
+          imagePullPolicy: Always

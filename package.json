@@ -1,0 +1,44 @@
+{
+  "name": "youverify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/node": "^7.14.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/register": "^7.14.5",
+    "@babel/runtime": "^7.14.8",
+    "amqplib": "^0.8.0",
+    "babel-node": "0.0.1-security",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "body-parser": "^1.19.0",
+    "chai-http": "^4.3.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "joi": "^17.4.1",
+    "mongoose": "^5.13.4",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12",
+    "redis": "^3.1.2"
+  },
+  "devDependencies": {
+    "debug": "^4.3.2",
+    "eslint": "^7.31.0"
+  },
+  "scripts": {
+    "macstart:dev": "DEBUG=app nodemon ./server/index.js --exec babel-node",
+    "windowsstart:dev": "set DEBUG=app & nodemon ./server/index.js --exec babel-node",
+    "build": "npm run clean && babel ./server -d ./dist",
+    "start": "node ./dist/index.js",
+    "clean": "rm -rf dist",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
